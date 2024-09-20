@@ -1,0 +1,165 @@
+/* Font loading */
+@font-face {
+    font-family: 'Futura';
+    src: url('./futur.ttf') format('truetype');
+}
+
+/* Basic reset and layout settings */
+body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    font-family: 'Futura', sans-serif;  /* Apply Futura font to the entire page */
+}
+
+/* Grid layout for bubbles */
+.bubble-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 10px;
+    width: 80vw;
+    height: 80vh;
+}
+
+/* Bubble style */
+.bubble {
+     
+    width: 100%;
+    height: 0;
+    padding-bottom: 80%;
+    border-radius: 50%;
+    background-color: #5e5e5e;
+   padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.bubble::after {
+    padding-top: 200px;
+    content: '';
+    display: block;
+    /* padding-bottom: 100%; */
+}
+
+.bubble span {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    z-index: 1;
+    font-family: 'Futura', sans-serif;  /* Apply Futura to bubble text */
+    text-align: center;
+}
+
+/* Circular modal style */
+.modal {
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgb(144, 144, 144);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0; /* Initially invisible */
+    transform: translate(-50%, -50%);
+}
+
+.modal.open {
+    display: block;
+    opacity: 1;
+    width: 400px;  /* Larger size when opened */
+    height: 400px;
+    border-radius: 50%;  /* Maintain circular shape */
+}
+
+/* Modal content styling */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Futura', sans-serif;  /* Apply Futura to modal content */
+}
+
+#bubble-title, #bubble-description, #bubble-color {
+    margin: 5px 0;
+    padding: 5px;
+    box-sizing: border-box;
+    font-family: 'Futura', sans-serif;  /* Apply Futura to input fields */
+}
+
+#bubble-title {
+    width: 80%;  /* Smaller width */
+    text-align: center;
+}
+
+#bubble-description {
+    height: 60%;  /* Larger text area */
+    resize: none;
+}
+
+#bubble-color {
+    margin: 5px 0;
+    width: 50%;  /* Compact color picker */
+}
+
+/* Save and close buttons */
+#save-bubble, #close-modal {
+    margin-top: 10px;
+    padding: 8px;
+    cursor: pointer;
+    width: 80px;  /* Compact button size */
+    text-align: center;
+    background-color: #3d3d3d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Futura', sans-serif;  /* Apply Futura to buttons */
+}
+
+#save-bubble:hover, #close-modal:hover {
+    background-color: #272727;
+}
+/* .bubble {
+    position: relative;
+    animation: vibrate 0.3s infinite;
+}
+
+/* Keyframes for vibrating/bouncing effect */
+/* @keyframes vibrate {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, 1px); }
+    100% { transform: translate(-1px, -1px); }
+}
+.bubble {
+    position: relative;
+    transition: transform 0.3s ease-out;  /* Smooth movement when bubbles are attracted */
+    /* animation: vibrate 0.3s infinite;
+}
+
+/* Keyframes for vibrating effect (as previously implemented) */
+/* @keyframes vibrate {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, 1px); }
+    100% { transform: translate(-1px, -1px); }
+} */ */ */ */

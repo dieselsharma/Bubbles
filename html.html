@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="bubble-grid" class="bubble-grid"></div>
+
+    <!-- Modal for editing bubble details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <input type="text" id="bubble-title" placeholder="Bubble Title">
+            <textarea id="bubble-description" placeholder="Bubble Description"></textarea>
+            <input type="color" id="bubble-color">
+            <button id="save-bubble">Save</button>
+            <button id="close-modal">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
